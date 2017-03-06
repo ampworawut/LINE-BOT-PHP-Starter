@@ -17,10 +17,10 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			if $text - "print"; {
-				$replymsg = "พิมพ์งานไม่ได้ใช่ไหม?"
+				$replymsg = "พิมพ์งานไม่ได้ใช่ไหม?";
 			}
 			else {
-				$replaymsg="ไม่รู้อ่ะ"
+				$replaymsg="ไม่รู้อ่ะ";
 			}
 
 			// Build message to reply back
