@@ -16,10 +16,17 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			if $text - "print"; {
+				$replymsg = "พิมพ์งานไม่ได้ใช่ไหม?"
+			}
+			else {
+				$replaymsg="ไม่รู้อ่ะ"
+			}
+
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $replymsg
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
