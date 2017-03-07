@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			if $text - "print"; {
+			if $text == "print"; {
 				$replymsg = "พิมพ์งานไม่ได้ใช่ไหม?";
 			}
 			else {
