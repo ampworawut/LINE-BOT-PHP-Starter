@@ -18,8 +18,8 @@ if (!is_null($events['events'])) {
 			$replytext = $text;
 			// Build message to reply back
 			if ($text == 'test'){
-			$replytext = "Got it";
-		} 
+			$replytext = "true";
+		}
 			$messages = [
 				'type' => 'text',
 				'text' => $replytext
