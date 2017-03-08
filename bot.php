@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$replytext = $text;
 			// Build message to reply back
-			if ($text == 'test'){
+			if ($text contains 'test'){
 			$replytext = "true";
 		}
 			$messages = [
