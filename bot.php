@@ -16,10 +16,10 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$replytext = "";
-			date_default_timezone_set("Asia/Bangkok"); 
+			date_default_timezone_set("Asia/Bangkok");
 			// Build message to reply back
 			if (strpos($text,'time')!== false){
-			$replytext = time();
+			$replytext = date("h:i:sa");
 		}
 		if ($replytext != ""){
 			$messages = [
