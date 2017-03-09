@@ -21,6 +21,13 @@ if (!is_null($events['events'])) {
 			if (strpos($text,'time')!== false){
 			$replytext = date("H:i");
 		}
+			if (strpos($text,'weather') !== false){
+		$request = 'http://api.openweathermap.org/data/2.5/forecast/city?APPID=4170f37d550eea9a269901fe6eb64ed7&q=Bangkok';
+    $response  = file_get_contents($request);
+    $jsonobj  = json_decode($response);
+    //print_r($jsonobj);
+				$replytext=$jsonobj;
+			}
 		if ($replytext != ""){
 			$messages = [
 				'type' => 'text',
