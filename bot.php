@@ -19,14 +19,14 @@ if (!is_null($events['events'])) {
 			date_default_timezone_set("Asia/Bangkok");
 			// Build message to reply back
 			if (strpos($text,'time')!== false){
-			$replytext = date("h:i:sa");
+			$replytext = date("H:i");
 		}
 		if ($replytext != ""){
 			$messages = [
 				'type' => 'text',
 				'text' => $replytext
 			];
-		}
+
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -47,6 +47,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 		}
+	}
 	}
 }
 echo "OK";
