@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			if (strpos($text,'weather') !== false){
 		$request = 'http://api.openweathermap.org/data/2.5/weather?q=Bangkok&appid=4170f37d550eea9a269901fe6eb64ed7&units=metric';
     $response  = file_get_contents($request);
-    $jsonobj  = json_decode($response);
+    $jsonobj  = json_decode($response, true);
     //print_r($jsonobj);
 				$replytext = $jsonobj['main']['temp'];
 			}
