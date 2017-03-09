@@ -15,16 +15,17 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			$replytext = $text;
+			$replytext = "";
 			// Build message to reply back
-			if (strpos($text,'test')!== false){
-			$replytext = "true";
+			if (strpos($text,'time')!== false){
+			$replytext = time();
 		}
+		if ($replytext != ""){
 			$messages = [
 				'type' => 'text',
 				'text' => $replytext
 			];
-
+		}
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
