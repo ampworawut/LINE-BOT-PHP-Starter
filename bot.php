@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
     $response  = file_get_contents($request);
     $jsonobj  = json_decode($response);
     //print_r($jsonobj);
-				$replytext=$jsonobj['main.temp'];
+				$replytext=$jsonobj['main']['temp'];
 			}
 		if ($replytext != ""){
 			$messages = [
