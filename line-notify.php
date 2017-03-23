@@ -2,31 +2,12 @@
 $access_token = 'zREzoi9Uh18o2iU5t9MBdtfaJm80p6yRTZwcmhU7Lpf';
 $churl = 'www2.nanotec.or.th';
 
-function isSiteAvailable($churl)
-{
-//check, if a valid url is provided
-if(!filter_var($churl, FILTER_VALIDATE_URL))
-{
-echo "URL provided wasn't valid";
-}
-
-//make the connection with curl
-$cl = curl_init($churl);
-curl_setopt($cl,CURLOPT_CONNECTTIMEOUT,10);
-curl_setopt($cl,CURLOPT_HEADER,true);
-curl_setopt($cl,CURLOPT_NOBODY,true);
-curl_setopt($cl,CURLOPT_RETURNTRANSFER,true);
-
-//get response
-$response = curl_exec($cl);
-
-curl_close($cl);
-
-if ($response) {
-  echo "Site seems to be up and running!";
-}else {
-  echo "Oops nothing found, the site is either offline or the domain doesn't exist";
-  $messages = "Test";
+$host = 'google.com';
+if($socket =@ fsockopen($host, 80, $errno, $errstr, 30)) {
+echo 'online!';
+fclose($socket);
+} else {
+echo 'offline.';
 }
 
 if($messages !== "") {
