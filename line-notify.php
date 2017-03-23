@@ -1,6 +1,6 @@
 <?php
 $access_token = 'zREzoi9Uh18o2iU5t9MBdtfaJm80p6yRTZwcmhU7Lpf';
-$churl = 'www2.nanotec.or.th';
+$churl = 'www555.nanotec.or.th';
 
 $host = 'google.com';
 if($socket =@ fsockopen($host, 80, $errno, $errstr, 30)) {
@@ -8,6 +8,7 @@ echo 'online!';
 fclose($socket);
 } else {
 echo 'offline.';
+$message = $churl."is Down!!!";
 }
 
 if($messages !== "") {
