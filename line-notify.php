@@ -1,13 +1,14 @@
 <?php
 $access_token = 'zREzoi9Uh18o2iU5t9MBdtfaJm80p6yRTZwcmhU7Lpf';
 $host = 'www555.nanotec.or.th';
+date_default_timezone_set("Asia/Bangkok");
 
 if($socket =@ fsockopen($host, 80, $errno, $errstr, 30)) {
 echo 'online!';
 fclose($socket);
 } else {
 echo 'offline.';
-$message = $churl."is Down!!!";
+$message = $host ." is Down!!! (".date("H:i").")";
 }
 
 if($messages !== "") {
