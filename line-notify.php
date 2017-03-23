@@ -14,7 +14,7 @@ if($messages !== "") {
 
   $url = 'https://notify-api.line.me/api/notify';
   //$post = json_encode($data);
-  $post = "Message=".$messages;
+  $post = "Message=".$message;
   $headers = array('Content-Type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $access_token);
 
 
