@@ -16,19 +16,20 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$replytext = "";
-			date_default_timezone_set("Asia/Bangkok");
-			// Build message to reply back
+			//Time Response
 			if (strpos($text,'time')!== false){
+			date_default_timezone_set("Asia/Bangkok");
 			$replytext = date("H:i");
 		}
+			// Weather Response
 			if (strpos($text,'weather')!== false){
         $trimmed = str_replace("weather ", '', $text) ;
 				$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q='.$trimmed.'";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-    //print_r($jsonobj);
 				$replytext = $ow_contents['main']['temp'];
 			}
+			// Build message to reply back
 		if ($replytext !== ""){
 			$messages = [
 				'type' => 'text',
