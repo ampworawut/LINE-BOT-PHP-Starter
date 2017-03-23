@@ -16,12 +16,12 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$replytext = "";
-			//Time Response
+			//Time response
 			if (strpos($text,'time')!== false){
 			date_default_timezone_set("Asia/Bangkok");
 			$replytext = date("H:i");
 		}
-			// Weather Response
+			// Weather response
 			if (strpos($text,'weather')!== false){
         $trimmed = str_replace("weather ", '', $text) ;
 				$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q='.$trimmed.'";
