@@ -2,7 +2,7 @@
 $access_token = 'zREzoi9Uh18o2iU5t9MBdtfaJm80p6yRTZwcmhU7Lpf';
 $churl = 'www555.nanotec.or.th';
 
-$host = 'google.com';
+$host = 'www2.nanotec.or.th';
 if($socket =@ fsockopen($host, 80, $errno, $errstr, 30)) {
 echo 'online!';
 fclose($socket);
