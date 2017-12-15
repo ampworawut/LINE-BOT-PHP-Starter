@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: text/html; charset=utf-8');
 $text = "weather bangkok";
 
 			if (strpos($text,'weather')!== false){
