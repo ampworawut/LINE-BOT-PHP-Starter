@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			$ow_request = "https://api.fixer.io/latest?base=".$trimmed."";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-			$replytext = $ow_contents['THB'];
+			$replytext = $ow_contents['rates']['THB'];
 			}
 
 
