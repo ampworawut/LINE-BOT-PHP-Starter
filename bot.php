@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
     		$result = $ow_contents['weather']['main'];
-			$replytext = $trimmed;
+			$replytext = $result;
 
 			}
 			
@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
 			$result = $ow_contents['main']['temp'];
-			$replytext = $trimmed;
+			$replytext = $result;
 
 			}
 
