@@ -11,7 +11,7 @@ $text = "weather bangkok";
 			$replytext = $result;
 			}
 
-			echo $trimmed;
+			echo $text;
 			echo "\n";
 
 			echo $trimmed;
