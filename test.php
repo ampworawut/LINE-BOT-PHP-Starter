@@ -13,7 +13,7 @@ header('Content-Type: text/html; charset=utf-8');
 			$replytext = $result;
 			//}
 
-			print_r($bc_contents);
+			//print_r($json);
 
-			echo $text;
+			echo $json;
             ?>
