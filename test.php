@@ -17,6 +17,9 @@ $text = "weather bangkok";
 			echo $trimmed;
 			echo "<--- Trimmed   ";
 
+			echo $ow_request;
+			echo "<--- ow_request   ";
+
 			echo $ow_contents['main']['temp'];
 			echo "<--- Data   ";
 
