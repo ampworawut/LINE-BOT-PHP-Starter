@@ -15,7 +15,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 			//print_r($json);
 
-			echo $json;
+			//echo $json;
 
-			echo "".$bc_contents['item'][0]['type']." : ".$bc_contents['item'][0]['today']."\r\n".$bc_contents['item'][1]['type']." : ".$bc_contents['item'][1]['today']."\r\n".$bc_contents['item'][2]['type']." : ".$bc_contents['item'][2]['today']."\r\n";
+			echo "".$bc_contents['item'][0]['type']." : ".$bc_contents['item'][0]['today']."\n".$bc_contents['item'][1]['type']." : ".$bc_contents['item'][1]['today']."\n".$bc_contents['item'][2]['type']." : ".$bc_contents['item'][2]['today']."\n".$bc_contents['item'][3]['type']." : ".$bc_contents['item'][3]['today']."\n".$bc_contents['item'][4]['type']." : ".$bc_contents['item'][4]['today']."\n".$bc_contents['item'][5]['type']." : ".$bc_contents['item'][5]['today']."\n".$bc_contents['item'][6]['type']." : ".$bc_contents['item'][6]['today']."";
             ?>
