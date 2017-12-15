@@ -13,7 +13,7 @@ header('Content-Type: text/html; charset=utf-8');
 			$replytext = $result;
 			//}
 
-			var_dump($bc_contents);
+			print_r($bc_contents);
 
 			echo $text;
             ?>
