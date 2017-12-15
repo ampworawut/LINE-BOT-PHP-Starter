@@ -12,15 +12,15 @@ $text = "weather bangkok";
 			}
 
 			echo $text;
-			echo "\n";
+			echo "<--- Text   ";
 
 			echo $trimmed;
-			echo "\n";
+			echo "<--- Trimmed   ";
 
 			echo $ow_contents['main']['temp'];
-			echo "\n";
+			echo "<--- Data   ";
 
 			echo $replytext;
-			echo "\n";
+			echo "<--- Final   ";
 
                ?>
