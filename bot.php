@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 			$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q=".$trimmed."";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-    		$replytext = "Temperature at ".ucfirst($trimmed)." : ".$ow_contents['weather'][0]['description']."";
+    		$replytext = "Weather at ".ucfirst($trimmed)." : ".$ow_contents['weather'][0]['description']."";
 			}
 			
 			// Temperature response
@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 			$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q=".$trimmed."";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-			$replytext = "Temperature at".ucfirst($trimmed)." : ".$ow_contents['main']['temp']." C";
+			$replytext = "Temperature at ".ucfirst($trimmed)." : ".$ow_contents['main']['temp']." C";
 			}
 
 			// Currency response

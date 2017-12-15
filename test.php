@@ -1,29 +1,18 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-$text = "weather bangkok";
+//$text = "weather bangkok";
 
-			if (strpos($text,'weather')!== false){
-        	$trimmed = str_replace("weather ", '', $text) ;
-			$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q=".$trimmed."";
-    		$ow_response  = file_get_contents($ow_request);
-    		$ow_contents  = json_decode($ow_response, true);
-			$result = $ow_contents['main']['temp'];
+			//if (strpos($text,'oil')!== false){
+        	//$trimmed = str_replace("oil ", '', $text) ;
+			$bc_request = "https://crmmobile.bangchak.co.th/webservice/oil_price.aspx";
+    		$bc_response  = file_get_contents($bc_request);
+    		$json  = json_encode($bc_response);
+    		$bc_contents  = json_decode($json, true);
+			$result = $bc_contents['main']['temp'];
 			$replytext = $result;
-			}
+			//}
+
+			print_r($bc_contents);
 
 			echo $text;
-			echo "<--- Text   ";
-
-			echo $trimmed;
-			echo "<--- Trimmed   ";
-
-			echo $ow_request;
-			echo "<--- ow_request   ";
-
-			echo $ow_contents['main']['temp'];
-			echo "<--- Data   ";
-
-			echo $replytext;
-			echo "<--- Final   ";
-
-               ?>
+            ?>
