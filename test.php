@@ -1,6 +1,6 @@
 <?php
 
-$text = "weather bangkok"
+$text = "weather bangkok";
 
 			if (strpos($text,'temp')!== false){
         	$trimmed = str_replace("temp ", '', $text) ;
