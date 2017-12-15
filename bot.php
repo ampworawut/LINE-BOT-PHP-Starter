@@ -42,10 +42,10 @@ if (!is_null($events['events'])) {
 			// Currency response
 			if (strpos($text,'currency')!== false){
         	$trimmed = str_replace("currency ", '', $text) ;
-			$ow_request = "https://api.fixer.io/latest?base=THB";
+			$ow_request = "https://api.fixer.io/latest?base=".$trimmed."";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-			$replytext = $ow_contents[$trimmed];
+			$replytext = $ow_contents['THB'];
 			}
 
 
