@@ -17,6 +17,9 @@ $text = "weather bangkok";
 			echo $trimmed;
 			echo "\n";
 
+			echo $ow_contents['main']['temp'];
+			echo "\n";
+
 			echo $replytext;
 			echo "\n";
 
