@@ -12,9 +12,12 @@ $text = "weather bangkok";
 			}
 
 			echo $trimmed;
-			echo "/n";
+			echo "\n";
+
+			echo $trimmed;
+			echo "\n";
 
 			echo $replytext;
-			echo "/n";
+			echo "\n";
 
                ?>
