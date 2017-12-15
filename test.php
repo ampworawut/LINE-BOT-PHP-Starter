@@ -7,6 +7,7 @@
     		$ow_contents  = json_decode($ow_response, true);
 			$replytext = $ow_contents['main']['temp'];
 
+			echo $ow_response;
 			echo $replytext;
 			}
 
