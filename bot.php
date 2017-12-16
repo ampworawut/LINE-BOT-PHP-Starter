@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
 			$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q=".$trimmed."";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-    		$replytext = "Weather at ".ucfirst($trimmed)." : ".$ow_contents['weather'][0]['description']."";
+    		$replytext = "Weather in ".ucfirst($trimmed)." : ".$ow_contents['weather'][0]['description']."";
 			}
 
 			// Temperature response
@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 			$ow_request = "http://api.openweathermap.org/data/2.5/weather?appid=4170f37d550eea9a269901fe6eb64ed7&units=metric&q=".$trimmed."";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-			$replytext = "Temperature at ".ucfirst($trimmed)." : ".$ow_contents['main']['temp']." C";
+			$replytext = "Temperature in ".ucfirst($trimmed)." : ".$ow_contents['main']['temp']." C";
 			}
 
 			// Currency response
@@ -57,10 +57,21 @@ if (!is_null($events['events'])) {
     		$bc_xml= simplexml_load_string($bc_response);
     		$json  = json_encode($bc_xml);
     		$bc_contents  = json_decode($json, true);
-			$result = "".$bc_contents['item'][0]['type']." : ".$bc_contents['item'][0]['today']."\n".$bc_contents['item'][1]['type']." : ".$bc_contents['item'][1]['today']."\n".$bc_contents['item'][2]['type']." : ".$bc_contents['item'][2]['today']."\n".$bc_contents['item'][3]['type']." : ".$bc_contents['item'][3]['today']."\n".$bc_contents['item'][4]['type']." : ".$bc_contents['item'][4]['today']."\n".$bc_contents['item'][5]['type']." : ".$bc_contents['item'][5]['today']."\n".$bc_contents['item'][6]['type']." : ".$bc_contents['item'][6]['today']."";
+			$result = "ราคาน้ำมันวันนี้ \n".$bc_contents['item'][0]['type']." : ".$bc_contents['item'][0]['today']."\n".$bc_contents['item'][1]['type']." : ".$bc_contents['item'][1]['today']."\n".$bc_contents['item'][2]['type']." : ".$bc_contents['item'][2]['today']."\n".$bc_contents['item'][3]['type']." : ".$bc_contents['item'][3]['today']."\n".$bc_contents['item'][4]['type']." : ".$bc_contents['item'][4]['today']."\n".$bc_contents['item'][5]['type']." : ".$bc_contents['item'][5]['today']."\n".$bc_contents['item'][6]['type']." : ".$bc_contents['item'][6]['today']."";
 			$replytext = $result;
 			}
 
+			// OilPrice TMR response
+			if (strpos($text,'oiltmr')!== false){
+        	//$trimmed = str_replace("currency ", '', $text) ;
+			$bc_request = "https://crmmobile.bangchak.co.th/webservice/oil_price.aspx";
+    		$bc_response  = file_get_contents($bc_request);
+    		$bc_xml= simplexml_load_string($bc_response);
+    		$json  = json_encode($bc_xml);
+    		$bc_contents  = json_decode($json, true);
+			$result = "ราคาน้ำมันวันพรุ่งนี้ \n".$bc_contents['item'][0]['type']." : ".$bc_contents['item'][0]['tomorrow']."\n".$bc_contents['item'][1]['type']." : ".$bc_contents['item'][1]['tomorrow']."\n".$bc_contents['item'][2]['type']." : ".$bc_contents['item'][2]['tomorrow']."\n".$bc_contents['item'][3]['type']." : ".$bc_contents['item'][3]['tomorrow']."\n".$bc_contents['item'][4]['type']." : ".$bc_contents['item'][4]['tomorrow']."\n".$bc_contents['item'][5]['type']." : ".$bc_contents['item'][5]['tomorrow']."\n".$bc_contents['item'][6]['type']." : ".$bc_contents['item'][6]['tomorrow']."";
+			$replytext = $result;
+			}
 
 			// Build message to reply back
 		if ($replytext !== ""){
