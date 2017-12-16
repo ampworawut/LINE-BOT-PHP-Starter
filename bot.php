@@ -16,6 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$replytext = "";
+			$text = strtolower($text);
 			//Time response
 			if (strpos($text,'time')!== false){
 			date_default_timezone_set("Asia/Bangkok");
@@ -29,7 +30,7 @@ if (!is_null($events['events'])) {
     		$ow_contents  = json_decode($ow_response, true);
     		$replytext = "Weather at ".ucfirst($trimmed)." : ".$ow_contents['weather'][0]['description']."";
 			}
-			
+
 			// Temperature response
 			if (strpos($text,'temp')!== false){
         	$trimmed = str_replace("temp ", '', $text) ;
