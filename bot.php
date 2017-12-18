@@ -76,7 +76,7 @@ if (!is_null($events['events'])) {
 			// SET Index response
 			if (strpos($text,'setindex')!== false){
         	//$trimmed = str_replace("temp ", '', $text) ;
-			$ow_request = "https://finance.google.com/finance?q=INDEXBKK:SET";
+			$ow_request = "https://finance.google.com/finance?q=INDEXBKK:SET&output=json";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
 			$replytext = "SET Index : ".$ow_contents['l']";
