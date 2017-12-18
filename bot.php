@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 			$ow_request = "https://finance.google.com/finance?q=INDEXBKK:SET&output=json";
     		$ow_response  = file_get_contents($ow_request);
     		$ow_contents  = json_decode($ow_response, true);
-			$replytext = "Lastest SET Index : ".$ow_contents['keyratio']['l']."";
+			$replytext = "Lastest SET Index : ".$ow_contents[0]['l']."";
 			}
 
 			// Build message to reply back
